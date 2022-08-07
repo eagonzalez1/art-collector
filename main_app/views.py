@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Art, Artist
 
 
@@ -15,3 +17,16 @@ def arts_index(request):
 def arts_detail(request, art_id):
   art = Art.objects.get(id=art_id)
   return render(request, 'arts/detail.html', { 'art': art })
+
+class ArtCreate(CreateView):
+  model = Art
+  fields = '__all__'
+  success_url = '/arts/'
+
+class ArtUpdate(UpdateView):
+  model = Art
+  fields = ['title', 'date', 'artist', 'description']
+
+class ArtDelete(DeleteView):
+  model = Art
+  success_url = '/Arts/'
