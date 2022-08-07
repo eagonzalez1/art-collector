@@ -21,3 +21,6 @@ class Art(models.Model):
   
   def get_absolute_url(self):
     return reverse('arts_detail', kwargs={'art_id': self.id})
+
+  class Meta:
+    ordering = ['-date']
