@@ -2,8 +2,17 @@
 {% load static %}
 
 {% block head %}
-
+<link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+<script defer src="{% static 'js/add-art.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -19,7 +28,7 @@
 {% comment %} 
   Leaving the action empty makes the form post to the same url used to display it
 {% endcomment %}
-<form action="" method="post" class="form-container">
+<form action="" method="post" class="form-container" autocomplete="off">
   {% comment %} 
     Django requires the following for security purposes
   {% endcomment %}
