@@ -13,72 +13,29 @@
 
 <section class="page-header">
   <h1>New Sacred Geometry</h1>
-  ```html
-{% extends 'base.html' %}
-{% load static %}
-
-{% block head %}
-<link 
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'css/cats/cat-index.css' %}"
-/>
-{% endblock %}
-
-{% block content %}
-
-<section class="page-header">
-  <h1>Cat List</h1>
-  <img src="{% static 'images/1.png' %}" alt="A cool cat" height='20px'/>
-  <img src="{% static 'images/2.png' %}" alt="A happy cat" height='20px'/>
-  <img src="{% static 'images/3.png' %}" alt="A cat in a teacup" height='20px'/>
-  <img src="{% static 'images/4.png' %}" alt="A cat in a box" height='20px'/>
-</section>
-
-<section class="card-container">
-  {% for cat in cats %}
-    <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/sk8r-boi-cat.svg' %}" 
-            alt="A skater boy cat"
-          >
-        </div>
-        <h2 class="card-title">{{ cat.name }}</h2>
-        {% if cat.age > 0 %}
-          <p>A {{ cat.age }} year old {{ cat.breed }}</p>
-        {% else %}
-          <p>A {{ cat.breed }} kitten.</p>
-        {% endif %}
-        <p><small>{{ cat.description }}</small></p>
-      </div>
-    </div>
-  {% endfor %}
-</section>
-
-{% endblock %}
-```
+  <img src="{% static 'images/1.png' %}" alt="Art" height='20px'/>
+  <img src="{% static 'images/2.png' %}" alt="Art" height='20px'/>
+  <img src="{% static 'images/3.png' %}" alt="Art" height='20px'/>
+  <img src="{% static 'images/4.png' %}" alt="Art" height='20px'/>
 </section>
 
 <section class="card-container">
   {% for art in arts %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/sk8r-boi-art.svg' %}" 
-            alt="A skater boy art"
-          >
+      <a href="{% url 'arts_detail' art.id %}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/sk8r-boi-art.svg' %}" 
+              alt="Art picture"
+            >
+          </div>
+          <h2 class="card-title">{{ art.title }}</h2>
+          <p>By: {{ art.artist }}</p>
+          <p>Completed: {{ art.date }}</p>
+          <p><small>{{ art.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ art.name }}</h2>
-        {% if art.age > 0 %}
-          <p>A {{ art.age }} year old {{ art.breed }}</p>
-        {% else %}
-          <p>A {{ art.breed }} kitten.</p>
-        {% endif %}
-        <p><small>{{ art.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>
