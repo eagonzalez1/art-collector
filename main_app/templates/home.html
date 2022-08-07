@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<section class="logo-container">
+  <div class="art-container">
+    <img src="{% static 'images/flower-life.svg' %}" 
+    alt="Art Flower" 
+    height='100px'
+    />
+  </div>
+  <img 
+    src="{% static 'images/header-logo.svg' %}" 
+    alt="Text reads: MARICH Logo"
+  />
+</section>
+
+{% endblock %}
