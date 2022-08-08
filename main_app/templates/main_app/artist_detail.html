@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/arts/art-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="art-container">
+  <div class="art-img">
+    <img 
+    src="{{artist.picture}}" 
+    alt="Artist picture"
+    class="usr-img"
+  >
+  </div>
+  <div class="art-details">
+    <h1>{{ artist.name }}</h1>
+    <p>{{ art.about }}</p>
+    <div class="art-actions">
+      <a href="{% url 'artists_update' artist.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'artists_delete' artist.id %}" class="btn danger">Delete</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

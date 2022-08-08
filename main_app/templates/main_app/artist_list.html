@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/arts/art-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="card-container">
+  {% for artist in artist_list %}
+    <div class="card">
+      <a href="{% url 'artists_detail' artist.id %}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{{artist.picture}}" 
+              alt="artist picture"
+              width="500px"
+            >
+          </div>
+          <h2 class="card-title">{{ artist.name }}</h2>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

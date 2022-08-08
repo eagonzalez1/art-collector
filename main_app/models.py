@@ -1,10 +1,11 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 class Artist(models.Model):
   name = models.CharField(max_length=100)
+  contact = models.CharField(max_length=100)
   about = models.TextField(max_length=1000)
-  picture = models.CharField(max_length=250)
 
   def __str__(self):
     return self.name
@@ -14,7 +15,7 @@ class Art(models.Model):
   date = models.DateField('Completion Date')
   artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
   description = models.TextField(max_length=500)
-  photo = models.CharField(max_length=250)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return self.title
@@ -24,3 +25,10 @@ class Art(models.Model):
 
   class Meta:
     ordering = ['-date']
+
+class Photo(models.Model):
+  url = models.CharField(max_length=250)
+  art = models.OneToOneField(Art, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for art_id: {self.art_id} @{self.url}"
