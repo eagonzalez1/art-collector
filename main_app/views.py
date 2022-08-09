@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
-from .models import Art, Artist, Photo
+from .models import Art, Photo
 import uuid
 import boto3
 
