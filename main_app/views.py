@@ -37,7 +37,7 @@ class ArtUpdate(UpdateView):
 
 class ArtDelete(DeleteView):
   model = Art
-  success_url = '/Arts/'
+  success_url = '/arts/'
 
 
 
@@ -68,3 +68,4 @@ def add_photo(request, art_id):
     except Exception as err:
       print('An error occurred uploading file to S3: %s' % err)
   return redirect('arts_detail', art_id=art_id)
+
