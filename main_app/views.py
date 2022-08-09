@@ -23,7 +23,7 @@ def arts_detail(request, art_id):
 
 class ArtCreate(CreateView):
   model = Art
-  fields = ['title', 'date', 'description', 'art']
+  fields = ['title', 'description']
 
   def form_valid(self, form):
     # Assign the logged in user (self.request.user)
@@ -33,7 +33,7 @@ class ArtCreate(CreateView):
 
 class ArtUpdate(UpdateView):
   model = Art
-  fields = ['title', 'date', 'description']
+  fields = ['title', 'description']
 
 class ArtDelete(DeleteView):
   model = Art
