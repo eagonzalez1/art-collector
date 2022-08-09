@@ -29,24 +29,26 @@
   <div class="art-details">
     <h1>{{ art.title }}</h1>
     <p>{{ art.description }}</p>
-    <div class="art-actions">
-      <a href="{% url 'arts_update' art.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'arts_delete' art.id %}" class="btn danger">Delete</a>
-    </div>
-    <h3>Change {{ art.title }}'s photo</h3>
-    <p id="file-name"></p>
-    <form 
-      action="{% url 'add_photo' art.id %}"
-      enctype="multipart/form-data"
-      method="POST"
-    >
-      {% csrf_token %}
-      <label class="btn secondary">
-        Choose photo
-        <input type="file" name="photo-file" id="file-input">
-      </label>
-      <button type="submit" class="btn submit">Upload Photo</button>
-    </form>
+    {% if user.is_authenticated %}
+      <div class="art-actions">
+        <a href="{% url 'arts_update' art.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'arts_delete' art.id %}" class="btn danger">Delete</a>
+      </div>
+      <h3>Change {{ art.title }}'s photo</h3>
+      <p id="file-name"></p>
+      <form 
+        action="{% url 'add_photo' art.id %}"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        {% csrf_token %}
+        <label class="btn secondary">
+          Choose photo
+          <input type="file" name="photo-file" id="file-input">
+        </label>
+        <button type="submit" class="btn submit">Upload Photo</button>
+      </form>
+    {% endif %}
   </div>
 </section>
 
