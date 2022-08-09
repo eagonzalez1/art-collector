@@ -23,12 +23,17 @@ def arts_detail(request, art_id):
 
 class ArtCreate(CreateView):
   model = Art
-  fields = '__all__'
-  success_url = '/arts/'
+  fields = ['title', 'date', 'description', 'art']
+
+  def form_valid(self, form):
+    # Assign the logged in user (self.request.user)
+    form.instance.user = self.request.user  # form.instance is the cat
+    # Let the CreateView do its job as usual
+    return super().form_valid(form)
 
 class ArtUpdate(UpdateView):
   model = Art
-  fields = ['title', 'date', 'artist', 'description']
+  fields = ['title', 'date', 'description']
 
 class ArtDelete(DeleteView):
   model = Art
