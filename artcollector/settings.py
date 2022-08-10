@@ -129,7 +129,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-LOGIN_REDIRECT_URL = 'cats_index'
+LOGIN_REDIRECT_URL = 'arts_index'
 
 LOGOUT_REDIRECT_URL = 'home'
 
