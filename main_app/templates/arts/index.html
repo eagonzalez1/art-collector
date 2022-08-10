@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/arts/art-index.css' %}"
+  href="{% static 'css/arts/art-index.css' %}?{% now "U" %}"
 />
 {% endblock %}
 
@@ -17,6 +17,12 @@
   <img src="{% static 'images/2.png' %}" alt="Art" height='20px'/>
   <img src="{% static 'images/3.png' %}" alt="Art" height='20px'/>
   <img src="{% static 'images/4.png' %}" alt="Art" height='20px'/>
+</section>
+
+<section class="math-art">
+  <img src="{% static 'images/formula.jpeg' %}" alt="Art" height='300px'/>
+  <img src="{% static 'images/flower-life.svg' %}" alt="Art" height='300px'/>
+  <img src="{% static 'images/geometry.jpeg' %}" alt="Art" height='300px'/>
 </section>
 
 <section class="card-container">

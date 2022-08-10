@@ -36,3 +36,10 @@
   margin: 5px 0;
   font-size: var(--font-reg);
 }
+
+.math-art {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
