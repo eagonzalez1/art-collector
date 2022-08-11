@@ -44,6 +44,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  border: black;
-  border-radius: 5px;
+}
+
+.math-art-pic {
+  border: 2px solid black;
+  border-radius: 20px;
+
 }
