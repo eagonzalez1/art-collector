@@ -21,6 +21,7 @@ main > section {
 
 .logo-container {
   max-width: 375px;
+  flex-direction: row;
 }
 
 .art-container {

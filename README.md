@@ -1,6 +1,6 @@
 # ART COLLECTOR APP
 </br>
-Final project at GA, this website displays art pieces for artist Mary Gonzalez (my mother), and demonstrates the use of Python and Django to create a full-stack application while taking advantage of PostgreSQL and Amazon Web Services databases to allow the artist full CRUD.</br>
+Final project at GA, this website displays art pieces for artist Mary Gonzalez (my mother), and demonstrates the use of Python and Django to create a full-stack application connedcted to PostgreSQL and Amazon Web Services databases to allow the artist full CRUD using Django's built-in authentication and authorization.</br>
 </br>
 <img src="./main_app/static/images/app-screen-shot.png" alt="Website Screenshot.">
 </br></br>

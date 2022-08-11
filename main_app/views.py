@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Art, Photo
 import uuid
 import boto3
@@ -28,16 +29,14 @@ class ArtCreate(CreateView):
   fields = ['title', 'description']
 
   def form_valid(self, form):
-    # Assign the logged in user (self.request.user)
-    form.instance.user = self.request.user  # form.instance is the cat
-    # Let the CreateView do its job as usual
+    form.instance.user = self.request.user
     return super().form_valid(form)
 
-class ArtUpdate(UpdateView):
+class ArtUpdate(LoginRequiredMixin, UpdateView):
   model = Art
   fields = ['title', 'description']
 
-class ArtDelete(DeleteView):
+class ArtDelete(LoginRequiredMixin, DeleteView):
   model = Art
   success_url = '/arts/'
 
