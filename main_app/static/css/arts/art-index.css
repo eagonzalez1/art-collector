@@ -10,6 +10,7 @@
   margin: 10px;
   border: var(--borders);
   box-shadow: var(--card-box-shadow);
+  background-color: white;
 }
 
 .card-content {
@@ -43,4 +44,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+  border: black;
+  border-radius: 5px;
 }
