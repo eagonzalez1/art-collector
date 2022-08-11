@@ -1,6 +1,6 @@
 # ART COLLECTOR APP
 </br>
-This is an app to keep track of software-development jobs. It demonstrates the use of Node.js, Express, and mongoDB to create a full-stack application.</br>
+This .</br>
 </br>
 <img src="./main_app/static/images/app-screen-shot.png" alt="Website Screenshot.">
 </br></br>
