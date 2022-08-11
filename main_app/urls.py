@@ -10,4 +10,5 @@ urlpatterns = [
   path('arts/<int:pk>/update/', views.ArtUpdate.as_view(), name='arts_update'),
   path('arts/<int:pk>/delete/', views.ArtDelete.as_view(), name='arts_delete'),
   path('arts/<int:art_id>/add_photo/', views.add_photo, name='add_photo'),
+  path('accounts/signup/', views.signup, name='signup'),
 ]
